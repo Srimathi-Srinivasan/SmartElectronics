@@ -1,0 +1,38 @@
+﻿@using SmartElectronicsMVC.Models
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model SmartElectronicsMVC.Models.Product
+
+@using(var db = new SmartElectronicsContext())
+{
+    <div class="container">
+        <div class="row">
+
+            @{
+                var result = (from i in db.Products
+                              where i.CategoryId == 4
+                              select i);
+            }
+
+    @foreach (var item in result)
+    {
+         <div class="col">
+          <div class="card" style="width:400px ">
+            <img class="card-img-top" src="@item.Img1" alt="Card image" style="width:400px" height="300px">
+            <div class="card-body">
+              <h4 class="card-title">@item.Brand @item.Model</h4>
+              <p class="card-text">Rs. @item.Price</p>
+              <a asp-controller="Audio" asp-action="SpecificAudio" asp-route-id="@item.ProdId" class="btn btn-primary">See Details</a>
+            </div>
+          </div>
+          <br>
+         </div>
+         
+    }
+    </div>
+    </div>
+}

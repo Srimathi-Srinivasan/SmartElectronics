@@ -1,0 +1,14 @@
+C:\Users\Admin\Desktop\SE\SmartElectronicsLib\bin\Debug\net6.0\SmartElectronicsLib.deps.json
+C:\Users\Admin\Desktop\SE\SmartElectronicsLib\bin\Debug\net6.0\SmartElectronicsLib.runtimeconfig.json
+C:\Users\Admin\Desktop\SE\SmartElectronicsLib\bin\Debug\net6.0\SmartElectronicsLib.dll
+C:\Users\Admin\Desktop\SE\SmartElectronicsLib\bin\Debug\net6.0\SmartElectronicsLib.pdb
+C:\Users\Admin\Desktop\SE\SmartElectronicsLib\obj\Debug\net6.0\SmartElectronicsLib.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\SE\SmartElectronicsLib\obj\Debug\net6.0\SmartElectronicsLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\SE\SmartElectronicsLib\obj\Debug\net6.0\SmartElectronicsLib.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\SE\SmartElectronicsLib\obj\Debug\net6.0\SmartElectronicsLib.AssemblyInfo.cs
+C:\Users\Admin\Desktop\SE\SmartElectronicsLib\obj\Debug\net6.0\SmartElectronicsLib.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\SE\SmartElectronicsLib\obj\Debug\net6.0\SmartElectronicsLib.dll
+C:\Users\Admin\Desktop\SE\SmartElectronicsLib\obj\Debug\net6.0\refint\SmartElectronicsLib.dll
+C:\Users\Admin\Desktop\SE\SmartElectronicsLib\obj\Debug\net6.0\SmartElectronicsLib.pdb
+C:\Users\Admin\Desktop\SE\SmartElectronicsLib\obj\Debug\net6.0\SmartElectronicsLib.genruntimeconfig.cache
+C:\Users\Admin\Desktop\SE\SmartElectronicsLib\obj\Debug\net6.0\ref\SmartElectronicsLib.dll
