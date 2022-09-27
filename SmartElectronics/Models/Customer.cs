@@ -9,6 +9,7 @@ namespace SmartElectronicsMVC.Models
     {
         public Customer()
         {
+            CartDetails = new HashSet<CartDetail>();
             OrderDetails = new HashSet<OrderDetail>();
         }
 
@@ -33,6 +34,7 @@ namespace SmartElectronicsMVC.Models
         [Compare("Password", ErrorMessage = "Passwords donot match")]
         public string ConfirmPassword { get; set; }
 
+        public virtual ICollection<CartDetail> CartDetails { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
 
         public List<Customer> GetDetails(int id)

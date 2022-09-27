@@ -7,3 +7,19 @@
 
 <p>Prod ID: @Model.ProdId</p>
 <p>Price: @Model.Price</p>*@
+
+@using SmartElectronicsMVC.Models
+@model dynamic
+
+<div>
+@foreach(Product item in @Model.Products)
+{
+    
+    <img src="@item.Img1" class="d-block w-100" height="400px" width="100px" alt="Img 1">
+    <p>@item.Brand</p>
+    <p>@item.Model</p>
+    <p>@item.Price</p>
+    
+
+}
+</div>

@@ -17,6 +17,7 @@ namespace SmartElectronicsMVC.Models
         }
 
         public virtual DbSet<AudioDescription> AudioDescriptions { get; set; } = null!;
+        public virtual DbSet<CartDetail> CartDetails { get; set; } = null!;
         public virtual DbSet<Category> Categories { get; set; } = null!;
         public virtual DbSet<Customer> Customers { get; set; } = null!;
         public virtual DbSet<OrderDetail> OrderDetails { get; set; } = null!;
@@ -66,6 +67,28 @@ namespace SmartElectronicsMVC.Models
                     .WithMany()
                     .HasForeignKey(d => d.ProdId)
                     .HasConstraintName("FK__AudioDesc__ProdI__2C3393D0");
+            });
+
+            modelBuilder.Entity<CartDetail>(entity =>
+            {
+                entity.HasKey(e => e.CartId)
+                    .HasName("PK__CartDeta__51BCD797392E1023");
+
+                entity.Property(e => e.CartId).HasColumnName("CartID");
+
+                entity.Property(e => e.CustId).HasColumnName("CustID");
+
+                entity.Property(e => e.ProdId).HasColumnName("ProdID");
+
+                entity.HasOne(d => d.Cust)
+                    .WithMany(p => p.CartDetails)
+                    .HasForeignKey(d => d.CustId)
+                    .HasConstraintName("FK__CartDetai__CustI__4316F928");
+
+                entity.HasOne(d => d.Prod)
+                    .WithMany(p => p.CartDetails)
+                    .HasForeignKey(d => d.ProdId)
+                    .HasConstraintName("FK__CartDetai__ProdI__4222D4EF");
             });
 
             modelBuilder.Entity<Category>(entity =>

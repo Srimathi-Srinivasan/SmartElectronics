@@ -94,10 +94,10 @@ tr:nth-child(even) {
     @foreach(Product item in Model.Products)
     {
     <h4>@item.Brand @item.Model</h4>
-    <h4>Rs. @item.Price</h4>
-    }    
+    <h4>Rs. @item.Price</h4>      
        
-    <a href = "#" class="btn btn-primary">Add To Cart</a>
+    <a asp-controller="Cart" asp-action="AddCart" asp-route-pid="@item.ProdId" class="btn btn-primary">Add to Cart</a>
+    }
 </div>
 
 <div>

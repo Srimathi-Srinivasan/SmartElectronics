@@ -31,6 +31,7 @@ namespace ElectronicsShoppingMVC.Controllers
             if (result != null)
             {
                 HttpContext.Session.SetString("CustomerName", result.CustomerName);
+                HttpContext.Session.SetInt32("CustomerID", result.CustomerId);
                 return RedirectToAction("Index", "Home");
             }
             return View();
@@ -49,6 +50,7 @@ namespace ElectronicsShoppingMVC.Controllers
             if (result != null)
             {
                 HttpContext.Session.SetString("CustomerName", result.CustomerName);
+                HttpContext.Session.SetInt32("CustomerID", result.CustomerId);
                 return RedirectToAction("Index", "Home");
             }
             return View();

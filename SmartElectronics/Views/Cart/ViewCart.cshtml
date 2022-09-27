@@ -1,0 +1,72 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@using SmartElectronicsMVC.Models
+@model dynamic
+
+@*<div>
+    
+    @foreach(CartDetail item in @Model.Carts)
+    {
+        ViewBag.ProdID = @item.ProdId;
+        foreach(Product i in @Model.Products)
+        {
+            if(i.ProdId == @ViewBag.ProdID)
+            {
+                <img src="@i.Img1" class="d-block w-50" height="400px" width="50px" alt="Slide 1">
+                <p>@i.Brand</p>
+                <p>@i.Model</p>
+                <p>@i.Price</p>
+                ViewBag.Totalamount = ViewBag.Totalamount + @i.Price;
+            }
+        }
+
+    }
+</div>
+
+<div>
+    <p>Total amount = @ViewBag.Totalamount</p>
+</div>*@
+
+
+
+
+<div>
+    @foreach(CartDetail item in @Model.Carts)
+    {
+        ViewBag.ProdID = @item.ProdId;
+        foreach(Product i in @Model.Products)
+        {
+            if (i.ProdId == @ViewBag.ProdID)
+            {
+                <div class="card" style="width: fit-content;">
+                    <div class="row no-gutters">
+                        <div class="col-sm-5">
+                            <img class="card-img" src="@i.Img1" alt="Image1">
+                        </div>
+                            <div class="col-sm-7">
+                                <div class="card-body">
+                                    <h5 class="card-title">@i.Brand @i.Model</h5>
+                                    <h4 class="card-text">Rs. @i.Price</h4>
+                                    @*<a href="#" class="btn btn-primary">View Profile</a>*@
+                                    
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                ViewBag.Totalamount = ViewBag.Totalamount + @i.Price;
+                
+            }
+        }
+        <br />
+    }
+</div>
+
+<div>
+    <h3>Total amount = @ViewBag.Totalamount</h3>
+    <a @*asp-controller="Cart" asp-action="AddCart" asp-route-pid="@item.ProdId"*@ href = "#" class="btn btn-primary">Proceed To Pay</a>
+</div>
+  

@@ -19,4 +19,6 @@ alter table Customer add primary key(CustomerID)
 
 create table OrderDetails(OrderID int identity(2001,1) primary key,ProdID int references Product(ProdID),CustomerID int references Customer(CustomerID),Price float ,DeliveryDate Date,Address varchar(500))
 
-create table CartDetails(CustomerID int references Customer(CustomerID),ProdID int references Product(ProdID),Price float)
+create table CartDetails(CartID int primary key identity(3001,1),ProdID int references Product(ProdID),CustID int references Customer(CustomerID))
+drop table CartDetails
+

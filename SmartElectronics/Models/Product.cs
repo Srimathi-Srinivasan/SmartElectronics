@@ -7,6 +7,7 @@ namespace SmartElectronicsMVC.Models
     {
         public Product()
         {
+            CartDetails = new HashSet<CartDetail>();
             OrderDetails = new HashSet<OrderDetail>();
         }
 
@@ -21,6 +22,7 @@ namespace SmartElectronicsMVC.Models
         public string? Img3 { get; set; }
 
         public virtual Category? Category { get; set; }
+        public virtual ICollection<CartDetail> CartDetails { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
 
         public List<Product> GetDescription(int id)
@@ -30,6 +32,16 @@ namespace SmartElectronicsMVC.Models
                 var res = (from i in db.Products
                            where i.ProdId == id
                            select i).ToList();
+                return res;
+            }
+        }
+
+        public List<Product> GetProducts()
+        {
+
+            using (var db = new SmartElectronicsContext())
+            {
+                var res = (from i in db.Products select i).ToList();
                 return res;
             }
         }

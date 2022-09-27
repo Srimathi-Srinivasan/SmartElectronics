@@ -12,7 +12,12 @@
     ViewData["Title"] = "SpecificTV";
 }
 
-
+@if (TempData["cartmsg"] != null)
+{
+    <div class="alert alert-success">
+        <strong>Item Added to Cart Successfully!</strong>
+    </div>
+}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -94,10 +99,15 @@ tr:nth-child(even) {
     @foreach(Product item in Model.Products)
     {
     <h4>@item.Brand @item.Model</h4>
-    <h4>Rs. @item.Price</h4>
-    }    
-       
-    <a href="#"@*asp-controller="Television" asp-action="SpecificTV" sp-route-id="@Model.CustomerId" asp-route-id2="@Model.ProdId"*@ class="btn btn-primary">Add To Cart</a>
+    <h4>Rs. @item.Price</h4>  
+    <h5>@item.ProdId</h5>
+    <a asp-controller="Cart" asp-action="AddCart" asp-route-pid="@item.ProdId" class="btn btn-primary">Add to Cart</a>
+    }
+   @* @foreach(Product item in Model.Products)
+    {
+  
+    <a asp-controller="Cart" asp-action="CartDetails" asp-route-id="@item.ProdId" class="btn btn-primary">Add to Cart</a>
+    } *@
 </div>
 
 <div>
